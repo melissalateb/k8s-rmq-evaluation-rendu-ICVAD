@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
-  namespace: melissalateb
 spec:
   replicas: 1
   selector:
@@ -16,22 +15,5 @@ spec:
       containers:
         - name: backend
           image: melissalateb/backend:latest
-          env:
-            - name: RABBITMQ_URL
-              value: "amqp://production-rabbitmqcluster-melissalateb:5672"
-            - name: PGHOST
-              value: "database-service"
-            - name: PGPORT
-              value: "5432"      
-            - name: PGUSER
-              value: "myuser"
-            - name: PGDATABASE
-              value: "mydatabase"
-            - name: PGPASSWORD
-              value: "mypassword"        
-            - name: PORT
-              value: "5432"                        
           ports:
-            - containerPort: 4040
-
-
+            - containerPort: 8080
