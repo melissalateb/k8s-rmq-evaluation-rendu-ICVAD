@@ -92,3 +92,23 @@ deployment.apps/rabbitmq-cluster-operator unchanged
     deployment.apps/backend-deployment created
     service/backend-service created
 ```
+
+8. **Construction des images docker** : 
+```sh
+    docker build -t melissalateb/backend:latest .
+``` 
+(Attention : il faut se mettre dans le dossier ou se trouve le Docker file ./database/ afin de pouvoir executer la commande docker avec succes)
+--> Résultat 
+    ![alt text](image.png)
+
+## Push les modifications :
+
+```powershell
+    docker push melissalateb/backend:latest 
+```
+
+--> Résultat 
+
+```powershell
+    latest: digest: sha256:1aca98959565825d96fe5d8e3712853331312a0c3a0ad14b6ebdb12f8a9c20f7 size: 3226
+```
