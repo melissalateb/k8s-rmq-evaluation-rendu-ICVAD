@@ -1,2 +1,4 @@
 #!/bin/sh
-# Here add initialisation code for your DB
+
+# Exécute le script SQL pour créer la base de données et l'utilisateur
+# Ce fichier est intotionelement laissé vide
