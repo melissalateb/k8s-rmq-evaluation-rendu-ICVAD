@@ -43,3 +43,52 @@ $env:KUBECONFIG="C:\Users\mlateb\Desktop\CFA\ICVAD2\Projet final vendredi\kubeco
 | ...          | ...    | ...  |
 | melissalateb | Active | 24s  |
 | ...          | ...    | ...  |
+
+5. **Lancer le serveur RabbitMQ** :
+
+```sh
+    kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/latest/download/cluster-operator.yml"
+```
+
+--> Résultat 
+```powershell 
+    namespace/rabbitmq-system unchanged
+customresourcedefinition.apiextensions.k8s.io/rabbitmqclusters.rabbitmq.com unchanged
+serviceaccount/rabbitmq-cluster-operator unchanged
+role.rbac.authorization.k8s.io/rabbitmq-cluster-leader-election-role unchanged
+clusterrole.rbac.authorization.k8s.io/rabbitmq-cluster-operator-role unchanged
+clusterrole.rbac.authorization.k8s.io/rabbitmq-cluster-service-binding-role unchanged
+rolebinding.rbac.authorization.k8s.io/rabbitmq-cluster-leader-election-rolebinding unchanged
+clusterrolebinding.rbac.authorization.k8s.io/rabbitmq-cluster-operator-rolebinding unchanged
+deployment.apps/rabbitmq-cluster-operator unchanged
+```
+
+(unchanged car l'étape a été réalisé lorsdes exercices au cours de la semaine)
+
+### Ajout du fichier "postgresql-deploiement.yaml"
+
+6. **Execution de postgresql-deploiement** :
+
+```sh
+    kubectl apply -f "C:\Users\mlateb\Desktop\CFA\ICVAD2\Projet final vendredi\postgresql-deploiement.yaml"
+```
+--> Résultat
+
+```powershell
+    persistentvolumeclaim/postgres-pvc created
+    service/postgres-service created
+    deployment.apps/postgres-deployment created
+```
+### Ajout du fichier "backend-deploiement.yaml"
+
+7. **Execution de backend-deploiement** : 
+
+```sh
+    kubectl apply -f "C:\Users\mlateb\Desktop\CFA\ICVAD2\Projet final vendredi\backend-deploiement.yaml"
+```
+--> Résultat
+```powershell
+    configmap/backend-config created
+    deployment.apps/backend-deployment created
+    service/backend-service created
+```
