@@ -96,10 +96,12 @@ deployment.apps/rabbitmq-cluster-operator unchanged
 8. **Construction des images docker** : 
 ```sh
     docker build -t melissalateb/backend:latest .
+    docker build -t melissalateb/postgresql:latest .
 ``` 
-(Attention : il faut se mettre dans le dossier ou se trouve le Docker file ./database/ afin de pouvoir executer la commande docker avec succes)
---> Résultat 
-    ![alt text](image.png)
+--> Résultat :
+
+![alt text](image-1.png)
+
 
 ## Push les modifications :
 
@@ -112,3 +114,13 @@ deployment.apps/rabbitmq-cluster-operator unchanged
 ```powershell
     latest: digest: sha256:1aca98959565825d96fe5d8e3712853331312a0c3a0ad14b6ebdb12f8a9c20f7 size: 3226
 ```
+
+## Vérification des deploiements : 
+
+```sh
+    kubectl get pods --namespace=melissalateb       
+```
+
+--> Résultat 
+
+![alt text](image.png)
